@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="lv">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rīgas Valsts vācu ģimnāzija</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -15,8 +17,9 @@
         <h3>Pieslēdzies</h3>
         <input type="text" id="username" placeholder="Lietotājvārds">
         <input type="password" id="password" placeholder="Parole">
-        <button onclick="window.location.href='registry.html'">Pieslēgties</button>
+        <button id="login-btn">Pieslēgties</button>
         <a href="#">Aizmirsu paroli</a>
     </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
