@@ -1,0 +1,120 @@
+/* styles.css */
+body {
+    background-color: #001f3f;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+.login-form {
+    max-width: 300px;
+    margin: 100px auto 0;
+    text-align: center;
+}
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #00b9b9, #00d400);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.login-form a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.content {
+    display: flex;
+    margin-top: 20px;
+}
+.buildings {
+    width: 200px;
+    margin-right: 20px;
+}
+.building {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.tables {
+    flex: 1;
+}
+.floor-header {
+    background-color: #004085;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th {
+    background-color: #004085;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+td {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+    position: relative;
+}
+input[type="checkbox"]:checked::before {
+    content: '\2714';
+    color: #28a745;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+input[type="checkbox"]:not(:checked)::before {
+    content: '\2716';
+    color: #dc3545;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
