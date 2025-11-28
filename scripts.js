@@ -1,4 +1,3 @@
-
 let db;
 let currentBuilding = 'Vecais korpuss';
 
@@ -42,18 +41,15 @@ async function initDB() {
                 }
             }
         }
-        // Initial data for Vecais korpuss
-        db.run(`UPDATE keys SET available=0, laiks='12:25', vards='Jānis', uzvards='Jumis' WHERE building='Vecais korpuss' AND cabinet='2';`);
-        db.run(`UPDATE keys SET available=0, laiks='12:40', vards='Kārlis', uzvards='Laimdots' WHERE building='Vecais korpuss' AND cabinet='3';`);
     }
-    // Ensure users table exists
+
     db.run(`
         CREATE TABLE IF NOT EXISTS users (
             username TEXT PRIMARY KEY,
             password TEXT
         );
     `);
-    // Add default user if not exists
+
     const stmtCheck = db.prepare('SELECT * FROM users WHERE username = ?');
     stmtCheck.bind(['admin']);
     if (!stmtCheck.step()) {
@@ -83,7 +79,7 @@ function renderTables() {
         const table = document.createElement('table');
         const thead = document.createElement('thead');
         const tr = document.createElement('tr');
-        ['Kabinets', 'Pieejams', 'Laiks', 'Vārds', 'Uzvārds'].forEach(text => {
+        ['Kabinets', 'Pieejamība', 'Laiks', 'Vārds', 'Uzvārds'].forEach(text => {
             const th = document.createElement('th');
             th.innerText = text;
             tr.appendChild(th);
@@ -157,7 +153,7 @@ function renderTables() {
 window.addEventListener('load', async () => {
     await initDB();
     if (document.getElementById('username')) {
-        // Login page
+
         const loginBtn = document.getElementById('login-btn');
         loginBtn.addEventListener('click', async (e) => {
             e.preventDefault();
@@ -174,7 +170,7 @@ window.addEventListener('load', async () => {
             stmt.free();
         });
     } else {
-        // Registry page
+
         const buildings = document.querySelectorAll('.building');
         buildings.forEach(building => {
             building.addEventListener('click', () => {
@@ -183,6 +179,11 @@ window.addEventListener('load', async () => {
                 currentBuilding = building.innerText;
                 renderTables();
             });
+        });
+
+        buildings[0].click();
+    }
+});
         });
         // Select first building by default
         buildings[0].click();
