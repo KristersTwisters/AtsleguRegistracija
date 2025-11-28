@@ -33,9 +33,9 @@ async function initDB() {
             );
         `);
 
-        const buildings = ['Vecais korpuss', 'Jaunais korpuss', 'Sporta korpuss', 'Skolas tornis']; // Fixed "Tornis" → consistent name
+        const buildings = ['Vecais korpuss', 'Jaunais korpuss', 'Sporta korpuss', 'Skolas tornis'];
 
-        const cabinetsFloor1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9']; // Now 9 cabinets on 1st floor
+        const cabinetsFloor1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
         const cabinetsFloor2 = ['10', '11'];
 
         for (let b of buildings) {
